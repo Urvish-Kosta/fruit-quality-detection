@@ -1,0 +1,8 @@
+flowchart LR
+    K["Kaggle datasets (classified + unclassified)"] --> PREP["Prepare into fruit/age/quality tree"]
+    PREP --> DISC["discover_samples()"]
+    DISC --> SPLIT["train / val split"]
+    SPLIT --> AUG["resize + normalize"]
+    AUG --> FIT["fit backbone + 3 heads"]
+    FIT --> CKPT["best checkpoint"]
+    CKPT --> EDGE["deploy to Jetson / Pi"]

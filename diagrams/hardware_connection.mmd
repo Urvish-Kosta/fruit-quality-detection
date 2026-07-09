@@ -1,0 +1,4 @@
+flowchart LR
+    CAM["USB Webcam"] -->|USB| SBC["Edge board: Jetson Nano OR Raspberry Pi"]
+    PWR["5V PSU"] -->|power| SBC
+    SBC -->|HDMI| DISP["Display: annotated overlay"]

@@ -1,0 +1,6 @@
+flowchart TD
+    IN["Input image 224x224x3"] --> BB["Shared backbone: ResNet50 / CNN / RNN"]
+    BB --> DR["Dropout 0.3"]
+    DR --> HF["Head: Fruit type - softmax(3)"]
+    DR --> HA["Head: Age/ripeness - softmax(3)"]
+    DR --> HQ["Head: Quality - softmax(2)"]
