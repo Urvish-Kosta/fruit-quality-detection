@@ -1,0 +1,13 @@
+# Training configuration for Fruit Quality Detection.
+# Edit data_dir and backbone, then:
+#   python scripts/train.py --backend tensorflow --config examples/config.yaml
+
+data_dir: data           # root of the fruit/age/quality folder tree
+image_size: 224          # ResNet-friendly square size
+batch_size: 32
+epochs: 30
+learning_rate: 0.0001
+val_split: 0.15
+seed: 42
+backbone: resnet         # resnet | cnn | rnn
+output_dir: runs
