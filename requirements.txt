@@ -1,0 +1,15 @@
+# Core (framework-agnostic)
+numpy>=1.23
+opencv-python>=4.7
+pillow>=9.0
+pyyaml>=6.0
+
+# TensorFlow backend (comment out if using PyTorch only)
+tensorflow>=2.12
+
+# PyTorch backend (comment out if using TensorFlow only)
+torch>=2.0
+torchvision>=0.15
+
+# Dev / test
+pytest>=7.0

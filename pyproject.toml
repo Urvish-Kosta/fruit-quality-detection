@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fruitqc"
+version = "0.1.0"
+description = "Low-cost, edge-deployable fruit age/quality classifier (apple, banana, orange)."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Urvish Kosta" }]
+keywords = ["computer-vision", "edge-ai", "jetson-nano", "raspberry-pi", "resnet", "fruit-classification"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
