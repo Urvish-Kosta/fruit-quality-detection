@@ -1,6 +1,6 @@
 # Fruit Quality Detection
 
-**A low-cost, edge-deployable computer-vision system for identifying the _age_ (ripeness) and _quality_ of common fruits — apple, banana, and orange — from a standard USB webcam feed.**
+**A low-cost, edge-deployable computer-vision system for identifying the _age_ (ripeness) and _quality_ of common fruits - apple, banana, and orange - from a standard USB webcam feed.**
 
 <p align="left">
   <img src="https://img.shields.io/badge/python-3.9%2B-blue" alt="Python 3.9+">
@@ -42,7 +42,7 @@
 
 ## Overview
 
-Fruit Quality Detection is an embedded machine-learning system that classifies a fruit's **type**, its **age/ripeness stage**, and its **quality (good vs. defective)** in real time from an ordinary USB webcam. It was designed to run on two low-cost single-board computers — the **NVIDIA Jetson Nano** and the **Raspberry Pi** — so that the accuracy/throughput trade-off of edge accelerators versus general-purpose SBCs could be compared directly on identical inputs.
+Fruit Quality Detection is an embedded machine-learning system that classifies a fruit's **type**, its **age/ripeness stage**, and its **quality (good vs. defective)** in real time from an ordinary USB webcam. It was designed to run on two low-cost single-board computers - the **NVIDIA Jetson Nano** and the **Raspberry Pi** - so that the accuracy/throughput trade-off of edge accelerators versus general-purpose SBCs could be compared directly on identical inputs.
 
 The project pairs a single shared convolutional backbone (ResNet performed best among the architectures evaluated) with two lightweight classification heads, so a single forward pass yields both an age estimate and a quality verdict.
 
@@ -62,12 +62,12 @@ Given a live camera frame containing a single fruit, the system must:
 
 ## Features
 
-- **Multi-output inference** — fruit type, age, and quality from one model pass.
-- **Two reference backends** — TensorFlow/Keras and PyTorch implementations of the same architecture.
-- **Edge-ready** — runs on Jetson Nano and Raspberry Pi with a standard USB webcam.
-- **Reproducible training pipeline** — configurable data loading, augmentation, training, and evaluation.
-- **Real-time capture demo** — annotated live overlay from the webcam feed.
-- **Comparative benchmarking** — scripts to measure accuracy and FPS per device.
+- **Multi-output inference** - fruit type, age, and quality from one model pass.
+- **Two reference backends** - TensorFlow/Keras and PyTorch implementations of the same architecture.
+- **Edge-ready** - runs on Jetson Nano and Raspberry Pi with a standard USB webcam.
+- **Reproducible training pipeline** - configurable data loading, augmentation, training, and evaluation.
+- **Real-time capture demo** - annotated live overlay from the webcam feed.
+- **Comparative benchmarking** - scripts to measure accuracy and FPS per device.
 
 ## System Architecture
 
@@ -185,7 +185,7 @@ Training data was sourced from public **Kaggle** fruit datasets covering apple, 
 
 ## Model Design
 
-Three architectures were evaluated — a custom **CNN**, an **RNN**, and **ResNet**. ResNet gave the best results and is the default. The deployed model uses a shared backbone with separate heads for age and quality (multi-output), so both predictions come from a single inference pass. Design rationale is in [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
+Three architectures were evaluated - a custom **CNN**, an **RNN**, and **ResNet**. ResNet gave the best results and is the default. The deployed model uses a shared backbone with separate heads for age and quality (multi-output), so both predictions come from a single inference pass. Design rationale is in [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
 
 ## Results
 
@@ -196,13 +196,13 @@ Reported by the authors for the two edge targets:
 | NVIDIA Jetson Nano| ~79%     | ~60 FPS      | Best accuracy and throughput       |
 | Raspberry Pi      | ~55%     | ~15–30 FPS   | General-purpose SBC, no GPU accel. |
 
-> **Author-confirmed.** These figures are confirmed by the author as consistent with the original ICCET 2023 work. They have not been re-run on this reconstructed code, and no additional metrics have been invented — further cells are left for future measured runs on this codebase.
+> **Author-confirmed.** These figures are confirmed by the author as consistent with the original ICCET 2023 work. They have not been re-run on this reconstructed code, and no additional metrics have been invented - further cells are left for future measured runs on this codebase.
 
 ## Limitations
 
 - Trained on three fruit types under dataset-typical lighting; unseen conditions may degrade accuracy.
 - Single-fruit-per-frame assumption; no multi-object detection/localization.
-- Raspberry Pi accuracy is materially lower than Jetson — the accuracy/cost trade-off is real.
+- Raspberry Pi accuracy is materially lower than Jetson - the accuracy/cost trade-off is real.
 - Reported metrics await re-verification (see above).
 
 ## Roadmap
@@ -220,5 +220,5 @@ Released under the [MIT License](LICENSE).
 
 ## Author
 
-**Urvish Kosta** — Embedded Systems & Digital Design Engineer
+**Urvish Kosta** - Embedded Systems & Digital Design Engineer
 [LinkedIn](https://linkedin.com/in/urvishkosta) · [GitHub](https://github.com/Urvish-Kosta)
